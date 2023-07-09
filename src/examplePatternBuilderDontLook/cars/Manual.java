@@ -1,9 +1,9 @@
-package patternBuilder.cars;
+package examplePatternBuilderDontLook.cars;
 
-import patternBuilder.components.Engine;
-import patternBuilder.components.GPSNavigator;
-import patternBuilder.components.Transmission;
-import patternBuilder.components.TripComputer;
+import examplePatternBuilderDontLook.components.Engine;
+import examplePatternBuilderDontLook.components.GPSNavigator;
+import examplePatternBuilderDontLook.components.Transmission;
+import examplePatternBuilderDontLook.components.TripComputer;
 
 public class Manual {
     private final CarType carType;

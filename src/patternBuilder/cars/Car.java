@@ -1,61 +1,60 @@
 package patternBuilder.cars;
 
-import patternBuilder.components.Engine;
-import patternBuilder.components.GPSNavigator;
-import patternBuilder.components.Transmission;
-import patternBuilder.components.TripComputer;
-
 public class Car {
-    private final CarType carType;
-    private final int seats;
-    private final Engine engine;
-    private final Transmission transmission;
-    private final TripComputer tripComputer;
-    private final GPSNavigator gpsNavigator;
-    private double fuel = 0;
 
-    public Car(CarType carType, int seats, Engine engine, Transmission transmission,
-               TripComputer tripComputer, GPSNavigator gpsNavigator) {
+    private String bodyStyle;
+    private String power;
+    private String engine;
+    private String breaks;
+    private String seats;
+    private String windows;
+    private String fuelType;
+    private String carType;
+
+    public Car (String carType){
         this.carType = carType;
-        this.seats = seats;
+    }
+
+    public void setBodyStyle(String bodyStyle) {
+        this.bodyStyle = bodyStyle;
+    }
+    public void setPower(String power) {
+        this.power = power;
+    }
+    public void setEngine(String engine) {
         this.engine = engine;
-        this.transmission = transmission;
-        this.tripComputer = tripComputer;
-        if (this.tripComputer != null) {
-            this.tripComputer.setCar(this);
-        }
-        this.gpsNavigator = gpsNavigator;
     }
-
-    public CarType getCarType() {
-        return carType;
+    public void setBreaks(String breaks) {
+        this.breaks = breaks;
     }
-
-    public double getFuel() {
-        return fuel;
+    public void setSeats(String seats) {
+        this.seats = seats;
     }
-
-    public void setFuel(double fuel) {
-        this.fuel = fuel;
+    public void setWindows(String windows) {
+        this.windows = windows;
     }
-
-    public int getSeats() {
-        return seats;
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType;
     }
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("--------------"+carType+"--------------------- \n");
+        sb.append(" Body: ");
+        sb.append(bodyStyle);
+        sb.append("\n Power: ");
+        sb.append(power);
+        sb.append("\n Engine: ");
+        sb.append(engine);
+        sb.append("\n Breaks: ");
+        sb.append(breaks);
+        sb.append("\n Seats: ");
+        sb.append(seats);
+        sb.append("\n Windows: ");
+        sb.append(windows);
+        sb.append("\n Fuel Type: ");
+        sb.append(fuelType);
 
-    public Engine getEngine() {
-        return engine;
-    }
-
-    public Transmission getTransmission() {
-        return transmission;
-    }
-
-    public TripComputer getTripComputer() {
-        return tripComputer;
-    }
-
-    public GPSNavigator getGpsNavigator() {
-        return gpsNavigator;
+        return sb.toString();
     }
 }

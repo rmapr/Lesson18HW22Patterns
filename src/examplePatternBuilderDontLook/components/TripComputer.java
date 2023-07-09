@@ -1,6 +1,6 @@
-package patternBuilder.components;
+package examplePatternBuilderDontLook.components;
 
-import patternBuilder.cars.Car;
+import examplePatternBuilderDontLook.cars.Car;
 
 public class TripComputer {
     private Car car;

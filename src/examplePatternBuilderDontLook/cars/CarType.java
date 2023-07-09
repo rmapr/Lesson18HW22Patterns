@@ -1,4 +1,4 @@
-package patternBuilder.cars;
+package examplePatternBuilderDontLook.cars;
 
 public enum CarType {
     CITY_CAR, SPORTS_CAR, SUV

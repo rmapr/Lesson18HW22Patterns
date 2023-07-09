@@ -1,13 +1,13 @@
-package patternBuilder.builders;
+package examplePatternBuilderDontLook.builders;
 
-import patternBuilder.cars.CarType;
-import patternBuilder.cars.Manual;
-import patternBuilder.components.Engine;
-import patternBuilder.components.GPSNavigator;
-import patternBuilder.components.Transmission;
-import patternBuilder.components.TripComputer;
+import examplePatternBuilderDontLook.cars.Car;
+import examplePatternBuilderDontLook.cars.CarType;
+import examplePatternBuilderDontLook.components.Engine;
+import examplePatternBuilderDontLook.components.GPSNavigator;
+import examplePatternBuilderDontLook.components.Transmission;
+import examplePatternBuilderDontLook.components.TripComputer;
 
-public class CarManualBuilder implements Builder{
+public class CarBuilder implements Builder{
     private CarType type;
     private int seats;
     private Engine engine;
@@ -15,7 +15,6 @@ public class CarManualBuilder implements Builder{
     private TripComputer tripComputer;
     private GPSNavigator gpsNavigator;
 
-    @Override
     public void setCarType(CarType type) {
         this.type = type;
     }
@@ -45,7 +44,7 @@ public class CarManualBuilder implements Builder{
         this.gpsNavigator = gpsNavigator;
     }
 
-    public Manual getResult() {
-        return new Manual(type, seats, engine, transmission, tripComputer, gpsNavigator);
+    public Car getResult() {
+        return new Car(type, seats, engine, transmission, tripComputer, gpsNavigator);
     }
 }

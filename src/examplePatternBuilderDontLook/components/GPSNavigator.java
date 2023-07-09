@@ -1,4 +1,4 @@
-package patternBuilder.components;
+package examplePatternBuilderDontLook.components;
 
 public class GPSNavigator {
     private String route;

@@ -1,4 +1,4 @@
-package patternBuilder.components;
+package examplePatternBuilderDontLook.components;
 
 public enum Transmission {
     SINGLE_SPEED, MANUAL, AUTOMATIC, SEMI_AUTOMATIC
