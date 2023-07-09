@@ -1,26 +1,32 @@
 package patternFactory;
 
 import patternFactory.app.Application;
-import patternFactory.factories.GUIFactory;
-import patternFactory.factories.MacOSFactory;
-import patternFactory.factories.WindowsFactory;
+import patternFactory.factories.FurnitureFactory;
+import patternFactory.factories.ModernFurnitureFactory;
+import patternFactory.factories.VictorianFurnitureFactory;
+
+import java.util.Scanner;
 
 public class App {
-    private static Application configureApplication() {
+    public static void main(String[] args) {
+        Application application = initApplication();
+        application.paint();
+    }
+    private static Application initApplication() {
         Application app;
-        GUIFactory factory;
-        String osName = System.getProperty("os.name").toLowerCase();
-        if (osName.contains("mac")) {
-            factory = new MacOSFactory();
+        FurnitureFactory factory;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("""
+                Choice:
+                1 - Modern Factory
+                2 - Victorian Factory""");
+        int numFactory = scanner.nextInt();
+        if (numFactory == 1) {
+            factory = new ModernFurnitureFactory();
         } else {
-            factory = new WindowsFactory();
+            factory = new VictorianFurnitureFactory();
         }
         app = new Application(factory);
         return app;
-    }
-
-    public static void main(String[] args) {
-        Application app = configureApplication();
-        app.paint();
     }
 }

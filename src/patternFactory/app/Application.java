@@ -1,20 +1,20 @@
 package patternFactory.app;
 
-import patternFactory.buttons.Button;
-import patternFactory.checkboxes.Checkbox;
-import patternFactory.factories.GUIFactory;
+import patternFactory.chairs.Chair;
+import patternFactory.factories.FurnitureFactory;
+import patternFactory.tables.Table;
 
 public class Application {
-    private Button button;
-    private Checkbox checkbox;
+    private Chair chair;
+    private Table table;
 
-    public Application(GUIFactory factory) {
-        button = factory.createButton();
-        checkbox = factory.createCheckbox();
+    public Application(FurnitureFactory factory) {
+        chair = factory.createChair();
+        table = factory.createTable();
     }
 
     public void paint() {
-        button.paint();
-        checkbox.paint();
+        chair.paint();
+        table.paint();
     }
 }
